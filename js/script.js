@@ -14,110 +14,163 @@ document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', 
 }));
 
 // Carousel Functionality
-let currentSlide = 0;
-let isTransitioning = false; // Prevent multiple transitions
-const slides = document.querySelectorAll('.carousel-item');
-const indicators = document.querySelectorAll('.indicator');
-const totalSlides = slides.length;
-const carouselSlide = document.querySelector('.carousel-slide');
-
-function showSlide(index) {
-    if (isTransitioning) return;
-    
-    isTransitioning = true;
-    
-    // Remove active classes
-    slides.forEach(slide => slide.classList.remove('active'));
-    indicators.forEach(indicator => indicator.classList.remove('active'));
-    
-    // Handle index boundaries
-    if (index >= totalSlides) {
-        currentSlide = 0;
-    } else if (index < 0) {
-        currentSlide = totalSlides - 1;
-    } else {
-        currentSlide = index;
-    }
-    
-    // Add active class to current slide and indicator
-    slides[currentSlide].classList.add('active');
-    indicators[currentSlide].classList.add('active');
-    
-    // Calculate transform value
-    const translateXValue = -(currentSlide * 100);
-    carouselSlide.style.transform = `translateX(${translateXValue}%)`;
-    
-    // Reset transitioning flag after animation completes
-    setTimeout(() => {
-        isTransitioning = false;
-    }, 500); // Match this with CSS transition duration
-}
-
-// Next/Previous buttons
-document.querySelector('.next-btn').addEventListener('click', () => {
-    showSlide(currentSlide + 1);
-});
-
-document.querySelector('.prev-btn').addEventListener('click', () => {
-    showSlide(currentSlide - 1);
-});
-
-// Indicator clicks
-indicators.forEach((indicator, index) => {
-    indicator.addEventListener('click', () => {
-        if (index !== currentSlide) {
-            showSlide(index);
-        }
-    });
-});
-
-// Auto slide change
-let autoSlideInterval = setInterval(() => {
-    showSlide(currentSlide + 1);
-}, 5000);
-
-// Pause auto-slide on hover/touch
-carouselSlide.addEventListener('mouseenter', () => {
-    clearInterval(autoSlideInterval);
-});
-
-carouselSlide.addEventListener('mouseleave', () => {
-    autoSlideInterval = setInterval(() => {
-        showSlide(currentSlide + 1);
-    }, 5000);
-});
-
-// Touch swipe functionality for mobile
-let startX = 0;
-let endX = 0;
-const carouselContainer = document.querySelector('.carousel-container');
-
-carouselContainer.addEventListener('touchstart', (e) => {
-    startX = e.touches[0].clientX;
-    clearInterval(autoSlideInterval); // Pause auto-slide during touch
-});
-
-carouselContainer.addEventListener('touchend', (e) => {
-    endX = e.changedTouches[0].clientX;
-    handleSwipe();
-    
-    // Resume auto-slide after touch
-    autoSlideInterval = setInterval(() => {
-        showSlide(currentSlide + 1);
-    }, 5000);
-});
-
-function handleSwipe() {
-    const swipeThreshold = 50;
-    
-    if (startX - endX > swipeThreshold) {
-        // Swipe left - next slide
-        showSlide(currentSlide + 1);
-    } else if (endX - startX > swipeThreshold) {
-        // Swipe right - previous slide
-        showSlide(currentSlide - 1);
-    }
-}
+  document.addEventListener('DOMContentLoaded', function() {
+            const slider = document.querySelector('.slider');
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            const dots = document.querySelectorAll('.dot');
+            const autoPlayToggle = document.getElementById('autoPlayToggle');
+            const playIcon = document.getElementById('playIcon');
+            const pauseIcon = document.getElementById('pauseIcon');
+            const toggleText = document.getElementById('toggleText');
+            const progressBar = document.getElementById('progressBar');
+            
+            let currentSlide = 0;
+            const slideCount = slides.length;
+            let autoPlayInterval;
+            let isAutoPlaying = true;
+            const autoPlayDelay = 5000; // 5 seconds
+            
+            // Initialize slider
+            function initSlider() {
+                updateSlider();
+                startAutoPlay();
+            }
+            
+            // Update slider position and active dot
+            function updateSlider() {
+                slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+                
+                // Update active dot
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentSlide);
+                });
+                
+                // Reset progress bar
+                progressBar.style.width = '0%';
+            }
+            
+            // Next slide
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slideCount;
+                updateSlider();
+            }
+            
+            // Previous slide
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + slideCount) % slideCount;
+                updateSlider();
+            }
+            
+            // Go to specific slide
+            function goToSlide(slideIndex) {
+                currentSlide = slideIndex;
+                updateSlider();
+            }
+            
+            // Start auto play
+            function startAutoPlay() {
+                if (autoPlayInterval) {
+                    clearInterval(autoPlayInterval);
+                }
+                
+                autoPlayInterval = setInterval(() => {
+                    nextSlide();
+                }, autoPlayDelay);
+                
+                // Start progress bar animation
+                progressBar.style.width = '100%';
+                progressBar.style.transition = `width ${autoPlayDelay}ms linear`;
+                
+                isAutoPlaying = true;
+                updateAutoPlayButton();
+            }
+            
+            // Stop auto play
+            function stopAutoPlay() {
+                if (autoPlayInterval) {
+                    clearInterval(autoPlayInterval);
+                    autoPlayInterval = null;
+                }
+                
+                // Reset progress bar
+                progressBar.style.width = '0%';
+                progressBar.style.transition = 'none';
+                
+                isAutoPlaying = false;
+                updateAutoPlayButton();
+            }
+            
+            // Toggle auto play
+            function toggleAutoPlay() {
+                if (isAutoPlaying) {
+                    stopAutoPlay();
+                } else {
+                    startAutoPlay();
+                }
+            }
+            
+            // Update auto play button appearance
+            function updateAutoPlayButton() {
+                if (isAutoPlaying) {
+                    playIcon.style.display = 'none';
+                    pauseIcon.style.display = 'block';
+                    toggleText.textContent = 'Pause';
+                } else {
+                    playIcon.style.display = 'block';
+                    pauseIcon.style.display = 'none';
+                    toggleText.textContent = 'Play';
+                }
+            }
+            
+            // Event listeners
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                if (isAutoPlaying) {
+                    // Restart auto play after manual navigation
+                    startAutoPlay();
+                }
+            });
+            
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                if (isAutoPlaying) {
+                    // Restart auto play after manual navigation
+                    startAutoPlay();
+                }
+            });
+            
+            dots.forEach(dot => {
+                dot.addEventListener('click', function() {
+                    const slideIndex = parseInt(this.getAttribute('data-slide'));
+                    goToSlide(slideIndex);
+                    if (isAutoPlaying) {
+                        // Restart auto play after manual navigation
+                        startAutoPlay();
+                    }
+                });
+            });
+            
+            autoPlayToggle.addEventListener('click', toggleAutoPlay);
+            
+            // Pause auto play when hovering over slider
+            slider.addEventListener('mouseenter', () => {
+                if (isAutoPlaying) {
+                    stopAutoPlay();
+                }
+            });
+            
+            // Resume auto play when leaving slider (if it was playing)
+            slider.addEventListener('mouseleave', () => {
+                if (!isAutoPlaying && autoPlayInterval === null) {
+                    startAutoPlay();
+                }
+            });
+            
+            // Initialize the slider
+            initSlider();
+        });
 
 // Tab functionality for results section
 const tabBtns = document.querySelectorAll('.tab-btn');
