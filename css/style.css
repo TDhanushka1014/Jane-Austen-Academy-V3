@@ -91,11 +91,7 @@ body {
 }
 
 .carousel-item {
-<<<<<<< HEAD
     width: 33.33%;
-=======
-    width: 25%;
->>>>>>> 87caa9f73dcfc09eee1f6cf3979d1da7fc6d3771
     height: 100%;
     background-size: cover;
     background-position: center;
