@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jane Austen Academy - Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <!-- Add your logo here -->
+                <img src="assets/jaa.jpg" alt="Jane Austen Academy">
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="contact.html" class="nav-link">Contact Us</a>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Banner Carousel -->
+    <section class="carousel-section">
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <!-- Add your banner images here -->
+                <div class="carousel-item active">
+                    <div class="carousel-content">
+                        <h2>Excellence in Education</h2>
+                        <p>Preparing students for academic success</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-content">
+                        <h2>Expert Faculty</h2>
+                        <p>Qualified teachers dedicated to student growth</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-content">
+                        <h2>Proven Results</h2>
+                        <p>Consistent track record of outstanding O/L results</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-btn prev-btn">&#10094;</button>
+            <button class="carousel-btn next-btn">&#10095;</button>
+            <div class="carousel-indicators">
+                <span class="indicator active"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Welcome Message -->
+    <section class="welcome-section">
+        <div class="container">
+            <h1>Welcome to Jane Austen Academy</h1>
+            <p>Your premier destination for quality education and academic excellence. We are committed to nurturing young minds and helping students achieve their full potential.</p>
+        </div>
+    </section>
+
+    <!-- Class Timetable -->
+    <section class="timetable-section">
+        <div class="container">
+            <h2>Class Timetable</h2>
+            <div class="table-container">
+                <table class="timetable">
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Grade</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Branch</th>
+                            <th>Teacher Contact</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Add your timetable data here -->
+                        <tr>
+                            <td>Mathematics</td>
+                            <td>10</td>
+                            <td>Monday</td>
+                            <td>4:00 PM - 6:00 PM</td>
+                            <td>Nugegoda</td>
+                            <td>077-1234567</td>
+                        </tr>
+                        <tr>
+                            <td>English</td>
+                            <td>11</td>
+                            <td>Tuesday</td>
+                            <td>3:30 PM - 5:30 PM</td>
+                            <td>Panadura</td>
+                            <td>077-2345678</td>
+                        </tr>
+                        <tr>
+                            <td>Science</td>
+                            <td>9</td>
+                            <td>Wednesday</td>
+                            <td>4:30 PM - 6:30 PM</td>
+                            <td>Ratnapura</td>
+                            <td>077-3456789</td>
+                        </tr>
+                        <tr>
+                            <td>Physics</td>
+                            <td>10</td>
+                            <td>Thursday</td>
+                            <td>4:00 PM - 6:00 PM</td>
+                            <td>Nugegoda</td>
+                            <td>077-4567890</td>
+                        </tr>
+                        <tr>
+                            <td>Chemistry</td>
+                            <td>11</td>
+                            <td>Friday</td>
+                            <td>3:30 PM - 5:30 PM</td>
+                            <td>Panadura</td>
+                            <td>077-5678901</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Institute Introduction -->
+    <section class="intro-section">
+        <div class="container">
+            <h2>About Jane Austen Academy</h2>
+            <!-- Add your institution introduction text here -->
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+    </section>
+
+    <!-- Remarkable Student Results -->
+    <section class="results-section">
+        <div class="container">
+            <h2>Remarkable Student Results</h2>
+            <div class="tabs-container">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="english">English</button>
+                    <button class="tab-btn" data-tab="english-literature">English Literature</button>
+                    <button class="tab-btn" data-tab="physics">Physics</button>
+                    <button class="tab-btn" data-tab="chemistry">Chemistry</button>
+                    <button class="tab-btn" data-tab="maths">Mathematics</button>
+                    <button class="tab-btn" data-tab="biology">Biology</button>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="english">
+                        <div class="table-container">
+                            <table class="results-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Grade/Marks</th>
+                                        <th>School</th>
+                                        <th>Teacher</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Add your English results data here -->
+                                    <tr>
+                                        <td>Student Name 1</td>
+                                        <td>A</td>
+                                        <td>School Name 1</td>
+                                        <td>Teacher Name 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Student Name 2</td>
+                                        <td>A</td>
+                                        <td>School Name 2</td>
+                                        <td>Teacher Name 2</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="english-literature">
+                        <div class="table-container">
+                            <table class="results-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Grade/Marks</th>
+                                        <th>School</th>
+                                        <th>Teacher</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Add your English Literature results data here -->
+                                    <tr>
+                                        <td>Student Name 3</td>
+                                        <td>A</td>
+                                        <td>School Name 3</td>
+                                        <td>Teacher Name 3</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="physics">
+                        <div class="table-container">
+                            <table class="results-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Grade/Marks</th>
+                                        <th>School</th>
+                                        <th>Teacher</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Add your Physics results data here -->
+                                    <tr>
+                                        <td>Student Name 4</td>
+                                        <td>A</td>
+                                        <td>School Name 4</td>
+                                        <td>Teacher Name 4</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="chemistry">
+                        <div class="table-container">
+                            <table class="results-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Grade/Marks</th>
+                                        <th>School</th>
+                                        <th>Teacher</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Add your Chemistry results data here -->
+                                    <tr>
+                                        <td>Student Name 5</td>
+                                        <td>A</td>
+                                        <td>School Name 5</td>
+                                        <td>Teacher Name 5</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="maths">
+                        <div class="table-container">
+                            <table class="results-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Grade/Marks</th>
+                                        <th>School</th>
+                                        <th>Teacher</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Add your Mathematics results data here -->
+                                    <tr>
+                                        <td>Student Name 6</td>
+                                        <td>A</td>
+                                        <td>School Name 6</td>
+                                        <td>Teacher Name 6</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="biology">
+                        <div class="table-container">
+                            <table class="results-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Grade/Marks</th>
+                                        <th>School</th>
+                                        <th>Teacher</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Add your Biology results data here -->
+                                    <tr>
+                                        <td>Student Name 7</td>
+                                        <td>A</td>
+                                        <td>School Name 7</td>
+                                        <td>Teacher Name 7</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Reviews -->
+    <section class="reviews-section">
+        <div class="container">
+            <h2>Student Reviews</h2>
+            <div class="reviews-container">
+                <div class="review-card">
+                    <div class="review-img">
+                        <!-- Add student image here -->
+                        <img src="assets/student1.jpg" alt="Student">
+                    </div>
+                    <div class="review-content">
+                        <p>"Jane Austen Academy helped me improve my grades significantly. The teachers are very supportive and the learning environment is excellent."</p>
+                        <h4>- Student Name</h4>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-img">
+                        <!-- Add student image here -->
+                        <img src="assets/student2.jpg" alt="Student">
+                    </div>
+                    <div class="review-content">
+                        <p>"I joined Jane Austen Academy for O/L classes and achieved excellent results. The teaching methods and study materials are top-notch."</p>
+                        <h4>- Student Name</h4>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-img">
+                        <!-- Add student image here -->
+                        <img src="assets/student3.jpg" alt="Student">
+                    </div>
+                    <div class="review-content">
+                        <p>"The personalized attention and small class sizes at Jane Austen Academy made a huge difference in my understanding of difficult subjects."</p>
+                        <h4>- Student Name</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Branches Section -->
+    <section class="branches-section">
+        <div class="container">
+            <h2>Our Branches</h2>
+            <div class="branches-container">
+                <div class="branch-card">
+                    <h3>Ratnapura</h3>
+                    <p>Address details for Ratnapura branch</p>
+                </div>
+                <div class="branch-card">
+                    <h3>Panadura</h3>
+                    <p>Address details for Panadura branch</p>
+                </div>
+                <div class="branch-card">
+                    <h3>Nugegoda</h3>
+                    <p>Address details for Nugegoda branch</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Jane Austen Academy</h3>
+                    <p>Providing quality education for academic excellence since 2010.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Branches</h3>
+                    <ul>
+                        <li>Ratnapura</li>
+                        <li>Panadura</li>
+                        <li>Nugegoda</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-phone"></i> +94 77 123 4567</p>
+                    <p><i class="fas fa-envelope"></i> info@janeaustenacademy.lk</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Jane Austen Academy. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
