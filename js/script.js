@@ -33,10 +33,10 @@ function showSlide(index) {
     slides[currentSlide].classList.add('active');
     indicators[currentSlide].classList.add('active');
     
-    // Move carousel - UPDATED CALCULATION
-    const slideWidth = 100 / totalSlides; // Calculate percentage per slide
-    document.querySelector('.carousel-slide').style.transform = `translateX(-${currentSlide * slideWidth}%)`;
+    // Move carousel
+    document.querySelector('.carousel-slide').style.transform = `translateX(-${currentSlide * 33.333}%)`;
 }
+
 
 // Next/Previous buttons
 document.querySelector('.next-btn').addEventListener('click', () => {
