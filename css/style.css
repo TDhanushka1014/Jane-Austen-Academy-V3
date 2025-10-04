@@ -73,6 +73,7 @@ body {
 }
 
 /* Carousel */
+/* Carousel */
 .carousel-section {
     margin-top: 0;
 }
@@ -85,20 +86,28 @@ body {
 
 .carousel-slide {
     display: flex;
-    width: 300%;
+    width: 100%; /* Changed from 300% to 100% */
     height: 100%;
-    transition: transform 0.5s ease;
+    transition: transform 0.5s ease-in-out; /* Added ease-in-out for smoother transitions */
+    will-change: transform;
 }
 
 .carousel-item {
-    width: 33.33%;
+    width: 100%; /* Each slide takes full width */
     height: 100%;
+    /* flex-shrink: 0; Prevent shrinking */
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Fade transition */
+}
+
+.carousel-item.active {
+    opacity: 1;
 }
 
 .carousel-item:nth-child(1) {
@@ -118,6 +127,7 @@ body {
     color: white;
     z-index: 2;
     padding: 0 20px;
+    max-width: 90%;
 }
 
 .carousel-content h2 {
@@ -140,6 +150,12 @@ body {
     cursor: pointer;
     font-size: 1.5rem;
     z-index: 10;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.carousel-btn:hover {
+    background: rgba(0, 0, 0, 0.7);
 }
 
 .prev-btn {
@@ -157,6 +173,7 @@ body {
     transform: translateX(-50%);
     display: flex;
     gap: 10px;
+    z-index: 10;
 }
 
 .indicator {
@@ -165,12 +182,48 @@ body {
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.5);
     cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .indicator.active {
     background-color: white;
+    transform: scale(1.2);
 }
 
+.indicator:hover {
+    transform: scale(1.1);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .carousel-container {
+        height: 300px;
+    }
+    
+    .carousel-content h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .carousel-content p {
+        font-size: 0.9rem;
+    }
+    
+    .carousel-btn {
+        padding: 12px 15px;
+        font-size: 1.2rem;
+        background: rgba(0, 0, 0, 0.7);
+    }
+    
+    .carousel-indicators {
+        bottom: 15px;
+    }
+    
+    .indicator {
+        width: 10px;
+        height: 10px;
+    }
+}
 /* Welcome Section */
 .welcome-section {
     padding: 4rem 0;
@@ -529,6 +582,20 @@ body {
     
     .carousel-content p {
         font-size: 1rem;
+    }
+    .carousel-btn {
+        padding: 12px 15px; /* Larger touch target */
+        font-size: 1.2rem;
+        background: rgba(0, 0, 0, 0.7); /* More visible */
+    }
+    
+    .carousel-indicators {
+        bottom: 15px;
+    }
+    
+    .indicator {
+        width: 10px;
+        height: 10px;
     }
     
     .welcome-section h1, .timetable-section h2, 
