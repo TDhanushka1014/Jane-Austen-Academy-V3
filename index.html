@@ -1,12 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jane Austen Academy | IGCSE, Edexcel & Cambridge Tuition in Nugegoda, Panadura</title>
+
+    <meta name="description"
+        content="Jane Austen Academy offers IGCSE, Edexcel, and Cambridge international syllabus tuition in Sri Lanka. With expert teachers and branches in Nugegoda, Panadura, and Ratnapura, we help students achieve academic excellence.">
+
+    <meta name="keywords"
+        content="IGCSE tuition Sri Lanka, Edexcel classes Nugegoda, Cambridge tuition Panadura, International syllabus tuition Colombo, Jane Austen Academy">
+    <meta name="author" content="Jane Austen Academy">
+    <meta name="robots" content="index, follow">
+
     <title>Jane Austen Academy - Home</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar">
@@ -55,36 +67,38 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="slider-controls">
             <button class="slider-btn prev-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black">
-                    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
                 </svg>
             </button>
             <button class="slider-btn next-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black">
-                    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
                 </svg>
             </button>
         </div>
-        
+
         <div class="slider-dots">
             <div class="dot active" data-slide="0"></div>
             <div class="dot" data-slide="1"></div>
             <div class="dot" data-slide="2"></div>
         </div>
-        
+
         <button class="auto-play-toggle" id="autoPlayToggle">
-            <svg id="playIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M8 5v14l11-7z"/>
+            <svg id="playIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                fill="currentColor">
+                <path d="M8 5v14l11-7z" />
             </svg>
-            <svg id="pauseIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
-                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+            <svg id="pauseIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                fill="currentColor" style="display: none;">
+                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
             </svg>
             <span id="toggleText">Pause</span>
         </button>
-        
+
         <div class="progress-bar" id="progressBar"></div>
     </div>
 
@@ -92,81 +106,238 @@
     <section class="welcome-section">
         <div class="container">
             <h1>Welcome to Jane Austen Academy</h1>
-            <p>Your premier destination for quality education and academic excellence. We are committed to nurturing young minds and helping students achieve their full potential.</p>
+            <p>
+                Jane Austen Academy is a leading IGCSE, Edexcel, and Cambridge tuition centre in Sri Lanka, offering
+                expert guidance for international syllabus students.
+                With branches in Nugegoda, Panadura, and Ratnapura, the academy delivers result-focused teaching to help
+                students achieve academic excellence and exam success.
+            </p>
         </div>
     </section>
 
-    <!-- Class Timetable -->
     <section class="timetable-section">
         <div class="container">
             <h2>Class Timetable</h2>
+
+            <!-- Filters -->
+            <div class="timetable-filter">
+                <div class="filter-group">
+                    <label for="gradeFilter">Grade</label>
+                    <select id="gradeFilter" class="grade-filter">
+                        <option value="all">All</option>
+                        <option value="9">Grade 9</option>
+                        <option value="10">Grade 10</option>
+                        <option value="11">Grade 11</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="branchFilter">Branch</label>
+                    <select id="branchFilter" class="branch-filter">
+                        <option value="all">All</option>
+                        <option value="Nugegoda">Nugegoda</option>
+                        <option value="Panadura">Panadura</option>
+                        <option value="Ratnapura">Ratnapura</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Table -->
             <div class="table-container">
-                <table class="timetable">
-                    <thead>
-                        <tr>
-                            <th>Subject</th>
-                            <th>Grade</th>
-                            <th>Date</th>
-                            <th>Time</th>
-                            <th>Branch</th>
-                            <th>Teacher Contact</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Add your timetable data here -->
-                        <tr>
-                            <td>Mathematics</td>
-                            <td>10</td>
-                            <td>Monday</td>
-                            <td>4:00 PM - 6:00 PM</td>
-                            <td>Nugegoda</td>
-                            <td>077-1234567</td>
-                        </tr>
-                        <tr>
-                            <td>English</td>
-                            <td>11</td>
-                            <td>Tuesday</td>
-                            <td>3:30 PM - 5:30 PM</td>
-                            <td>Panadura</td>
-                            <td>077-2345678</td>
-                        </tr>
-                        <tr>
-                            <td>Science</td>
-                            <td>9</td>
-                            <td>Wednesday</td>
-                            <td>4:30 PM - 6:30 PM</td>
-                            <td>Ratnapura</td>
-                            <td>077-3456789</td>
-                        </tr>
-                        <tr>
-                            <td>Physics</td>
-                            <td>10</td>
-                            <td>Thursday</td>
-                            <td>4:00 PM - 6:00 PM</td>
-                            <td>Nugegoda</td>
-                            <td>077-4567890</td>
-                        </tr>
-                        <tr>
-                            <td>Chemistry</td>
-                            <td>11</td>
-                            <td>Friday</td>
-                            <td>3:30 PM - 5:30 PM</td>
-                            <td>Panadura</td>
-                            <td>077-5678901</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="timetable-scroll">
+                    <table class="timetable" id="timetable">
+                        <thead>
+                            <tr>
+                                <th>Subject</th>
+                                <th>Grade</th>
+                                <th>Day</th>
+                                <th>Time</th>
+                                <th>Branch</th>
+                                <th>Teacher</th>
+                                <th>Contact</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- ORIGINAL ROWS -->
+                            <tr data-grade="10" data-branch="Nugegoda">
+                                <td>Mathematics</td>
+                                <td>10</td>
+                                <td>Monday</td>
+                                <td>4:00 PM – 6:00 PM</td>
+                                <td>Nugegoda</td>
+                                <td>Mr. Perera</td>
+                                <td>077-1234567</td>
+                            </tr>
+                            <tr data-grade="11" data-branch="Panadura">
+                                <td>English</td>
+                                <td>11</td>
+                                <td>Tuesday</td>
+                                <td>3:30 PM – 5:30 PM</td>
+                                <td>Panadura</td>
+                                <td>Ms. Fernando</td>
+                                <td>077-2345678</td>
+                            </tr>
+                            <tr data-grade="9" data-branch="Ratnapura">
+                                <td>Science</td>
+                                <td>9</td>
+                                <td>Wednesday</td>
+                                <td>4:30 PM – 6:30 PM</td>
+                                <td>Ratnapura</td>
+                                <td>Mr. Silva</td>
+                                <td>077-3456789</td>
+                            </tr>
+                            <tr data-grade="10" data-branch="Nugegoda">
+                                <td>Physics</td>
+                                <td>10</td>
+                                <td>Thursday</td>
+                                <td>4:00 PM – 6:00 PM</td>
+                                <td>Nugegoda</td>
+                                <td>Mr. Jayasinghe</td>
+                                <td>077-4567890</td>
+                            </tr>
+
+                            <!-- DUMMY DATA (20 MORE ROWS) -->
+                            <tr data-grade="11" data-branch="Panadura">
+                                <td>Chemistry</td>
+                                <td>11</td>
+                                <td>Monday</td>
+                                <td>3:00 PM – 5:00 PM</td>
+                                <td>Panadura</td>
+                                <td>Ms. Rathnayake</td>
+                                <td>077-5678901</td>
+                            </tr>
+                            <tr data-grade="9" data-branch="Nugegoda">
+                                <td>English</td>
+                                <td>9</td>
+                                <td>Tuesday</td>
+                                <td>4:00 PM – 6:00 PM</td>
+                                <td>Nugegoda</td>
+                                <td>Mr. Fernando</td>
+                                <td>077-6789012</td>
+                            </tr>
+                            <tr data-grade="10" data-branch="Ratnapura">
+                                <td>ICT</td>
+                                <td>10</td>
+                                <td>Wednesday</td>
+                                <td>3:30 PM – 5:30 PM</td>
+                                <td>Ratnapura</td>
+                                <td>Mr. Dissanayake</td>
+                                <td>077-7890123</td>
+                            </tr>
+                            <tr data-grade="11" data-branch="Nugegoda">
+                                <td>Biology</td>
+                                <td>11</td>
+                                <td>Thursday</td>
+                                <td>4:00 PM – 6:00 PM</td>
+                                <td>Nugegoda</td>
+                                <td>Ms. Wijesinghe</td>
+                                <td>077-8901234</td>
+                            </tr>
+                            <tr data-grade="9" data-branch="Panadura">
+                                <td>Mathematics</td>
+                                <td>9</td>
+                                <td>Friday</td>
+                                <td>3:30 PM – 5:30 PM</td>
+                                <td>Panadura</td>
+                                <td>Mr. Gunasekara</td>
+                                <td>077-9012345</td>
+                            </tr>
+                            <tr data-grade="10" data-branch="Nugegoda">
+                                <td>Chemistry</td>
+                                <td>10</td>
+                                <td>Saturday</td>
+                                <td>8:30 AM – 10:30 AM</td>
+                                <td>Nugegoda</td>
+                                <td>Ms. Karunaratne</td>
+                                <td>077-1122334</td>
+                            </tr>
+                            <tr data-grade="11" data-branch="Ratnapura">
+                                <td>Physics</td>
+                                <td>11</td>
+                                <td>Saturday</td>
+                                <td>10:45 AM – 12:45 PM</td>
+                                <td>Ratnapura</td>
+                                <td>Mr. Amarasinghe</td>
+                                <td>077-2233445</td>
+                            </tr>
+                            <tr data-grade="9" data-branch="Nugegoda">
+                                <td>History</td>
+                                <td>9</td>
+                                <td>Monday</td>
+                                <td>3:00 PM – 5:00 PM</td>
+                                <td>Nugegoda</td>
+                                <td>Ms. De Silva</td>
+                                <td>077-3344556</td>
+                            </tr>
+                            <tr data-grade="10" data-branch="Panadura">
+                                <td>Geography</td>
+                                <td>10</td>
+                                <td>Tuesday</td>
+                                <td>4:00 PM – 6:00 PM</td>
+                                <td>Panadura</td>
+                                <td>Mr. Jayawardena</td>
+                                <td>077-4455667</td>
+                            </tr>
+                            <tr data-grade="11" data-branch="Nugegoda">
+                                <td>ICT</td>
+                                <td>11</td>
+                                <td>Wednesday</td>
+                                <td>3:30 PM – 5:30 PM</td>
+                                <td>Nugegoda</td>
+                                <td>Mr. Peris</td>
+                                <td>077-5566778</td>
+                            </tr>
+                            <tr data-grade="9" data-branch="Ratnapura">
+                                <td>Religion</td>
+                                <td>9</td>
+                                <td>Thursday</td>
+                                <td>3:00 PM – 5:00 PM</td>
+                                <td>Ratnapura</td>
+                                <td>Ms. Kumari</td>
+                                <td>077-6677889</td>
+                            </tr>
+                            <tr data-grade="10" data-branch="Nugegoda">
+                                <td>Commerce</td>
+                                <td>10</td>
+                                <td>Friday</td>
+                                <td>4:00 PM – 6:00 PM</td>
+                                <td>Nugegoda</td>
+                                <td>Mr. Wickramasinghe</td>
+                                <td>077-7788990</td>
+                            </tr>
+                            <tr data-grade="11" data-branch="Panadura">
+                                <td>Accounting</td>
+                                <td>11</td>
+                                <td>Friday</td>
+                                <td>3:30 PM – 5:30 PM</td>
+                                <td>Panadura</td>
+                                <td>Ms. Nisansala</td>
+                                <td>077-8899001</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </section>
+
+
+
 
     <!-- Institute Introduction -->
     <section class="intro-section">
         <div class="container">
             <h2>About Jane Austen Academy</h2>
             <!-- Add your institution introduction text here -->
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>
+                <strong>Jane Austen Academy</strong> is a trusted centre for
+                <strong>IGCSE, Edexcel, and Cambridge international syllabus tuition in Sri Lanka</strong>.
+                Established in <strong>2014</strong>, the academy is known for experienced teachers,
+                quality instruction, and strong academic results.
+                With branches in <strong>Nugegoda, Panadura, and Ratnapura</strong>,
+                Jane Austen Academy supports students across Colombo and surrounding areas
+                in achieving academic excellence with confidence.
+            </p>
         </div>
     </section>
 
@@ -344,7 +515,8 @@
                         <img src="assets/student1.jpg" alt="Student">
                     </div>
                     <div class="review-content">
-                        <p>"Jane Austen Academy helped me improve my grades significantly. The teachers are very supportive and the learning environment is excellent."</p>
+                        <p>"Jane Austen Academy helped me improve my grades significantly. The teachers are very
+                            supportive and the learning environment is excellent."</p>
                         <h4>- Student Name</h4>
                     </div>
                 </div>
@@ -354,7 +526,8 @@
                         <img src="assets/student2.jpg" alt="Student">
                     </div>
                     <div class="review-content">
-                        <p>"I joined Jane Austen Academy for O/L classes and achieved excellent results. The teaching methods and study materials are top-notch."</p>
+                        <p>"I joined Jane Austen Academy for O/L classes and achieved excellent results. The teaching
+                            methods and study materials are top-notch."</p>
                         <h4>- Student Name</h4>
                     </div>
                 </div>
@@ -364,7 +537,8 @@
                         <img src="assets/student3.jpg" alt="Student">
                     </div>
                     <div class="review-content">
-                        <p>"The personalized attention and small class sizes at Jane Austen Academy made a huge difference in my understanding of difficult subjects."</p>
+                        <p>"The personalized attention and small class sizes at Jane Austen Academy made a huge
+                            difference in my understanding of difficult subjects."</p>
                         <h4>- Student Name</h4>
                     </div>
                 </div>
@@ -399,7 +573,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Jane Austen Academy</h3>
-                    <p>Providing quality education for academic excellence since 2010.</p>
+                    <p>Providing quality education for academic excellence since 2014.</p>
                 </div>
                 <div class="footer-section">
                     <h3>Quick Links</h3>
@@ -438,4 +612,5 @@
 
     <script src="js/script.js"></script>
 </body>
+
 </html>

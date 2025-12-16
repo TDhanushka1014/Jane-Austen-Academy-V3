@@ -190,3 +190,31 @@ tabBtns.forEach(btn => {
         document.getElementById(tabId).classList.add('active');
     });
 });
+
+// Timetable Filters (Grade + Branch)
+const gradeFilter = document.getElementById('gradeFilter');
+const branchFilter = document.getElementById('branchFilter');
+const timetableRows = document.querySelectorAll('#timetable tbody tr');
+
+function applyFilters() {
+    const selectedGrade = gradeFilter.value;
+    const selectedBranch = branchFilter.value;
+
+    timetableRows.forEach(row => {
+        const rowGrade = row.getAttribute('data-grade');
+        const rowBranch = row.getAttribute('data-branch');
+
+        const gradeMatch =
+            selectedGrade === 'all' || rowGrade === selectedGrade;
+
+        const branchMatch =
+            selectedBranch === 'all' || rowBranch === selectedBranch;
+
+        row.style.display = gradeMatch && branchMatch ? '' : 'none';
+    });
+}
+
+if (gradeFilter && branchFilter) {
+    gradeFilter.addEventListener('change', applyFilters);
+    branchFilter.addEventListener('change', applyFilters);
+}

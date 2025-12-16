@@ -7,24 +7,22 @@ hamburger.addEventListener('click', () => {
     navMenu.classList.toggle('active');
 });
 
-/// Event Year Filtering
-const filterButtons = document.querySelectorAll('.filter-btn');
-const eventCards = document.querySelectorAll('.event-card');
+// Timetable Grade Filter
+const gradeFilter = document.getElementById('gradeFilter');
+const timetableRows = document.querySelectorAll('#timetable tbody tr');
 
-filterButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-        // Active button
-        filterButtons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
+if (gradeFilter) {
+    gradeFilter.addEventListener('change', () => {
+        const selectedGrade = gradeFilter.value;
 
-        const year = btn.getAttribute('data-year');
+        timetableRows.forEach(row => {
+            const rowGrade = row.getAttribute('data-grade');
 
-        eventCards.forEach(card => {
-            if (year === 'all' || card.getAttribute('data-year') === year) {
-                card.style.display = 'block';
+            if (selectedGrade === 'all' || rowGrade === selectedGrade) {
+                row.style.display = '';
             } else {
-                card.style.display = 'none';
+                row.style.display = 'none';
             }
         });
     });
-});
+}
