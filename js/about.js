@@ -7,8 +7,24 @@ hamburger.addEventListener('click', () => {
     navMenu.classList.toggle('active');
 });
 
-// Close mobile menu when clicking on a link
-document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    navMenu.classList.remove('active');
-}));
+/// Event Year Filtering
+const filterButtons = document.querySelectorAll('.filter-btn');
+const eventCards = document.querySelectorAll('.event-card');
+
+filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        // Active button
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const year = btn.getAttribute('data-year');
+
+        eventCards.forEach(card => {
+            if (year === 'all' || card.getAttribute('data-year') === year) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+});
